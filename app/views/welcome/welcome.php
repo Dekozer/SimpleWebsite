@@ -1,20 +1,25 @@
 
-<div class="page-header">
-	<h1><?php echo $data['title'] ?></h1>
-</div>
+		<!-- Container for centent --> 
+		<div class="uk-container uk-container-center">
 
-<?php if (isset($alert['error'])){ echo \core\alert::display($alert, 'alert alert-danger'); } ?>
-<?php if (isset($alert['success'])){ echo \core\alert::display($alert, 'alert alert-success'); } ?>
-<?php if (isset($alert['infos'])){ echo \core\alert::display($alert, 'alert alert-info'); } ?>
+			<div class="uk-panel-title">
+				<h1><?php echo $data['title'] ?></h1>
+			</div>
 
-<p><?php echo $data['welcome_message'] ?></p>
+			<?php if (isset($alert['error'])){ echo \core\alert::display($alert, $class = 'danger'); } ?>
+			<?php if (isset($alert['success'])){ echo \core\alert::display($alert, $class = 'success'); } ?>
+			<?php if (isset($alert['info'])){ echo \core\alert::display($alert, $class = 'warning'); } ?>
 
-<a class="btn btn-md btn-success" href="<?php echo DIR ?>subpage">
-	<?php echo core\language::show('open_subpage', 'welcome') ?>
-</a>
+			<p><?php echo $data['welcome_message'] ?></p>
 
-<hr>
+			<a class="uk-button uk-button-success" href="<?php echo DIR ?>subpage">
+				<?php echo core\language::show('open_subpage', 'welcome') ?>
+			</a>
 
-<a class="btn btn-md btn-danger" href="/?ex=error" class="uk-button uk-button-danger">Alert error</a>
-<a class="btn btn-md btn-success" href="/?ex=success" class="uk-button uk-button-danger">Alert success</a>
-<a class="btn btn-md btn-info" href="/?ex=infos" class="uk-button uk-button-danger">Alert informations</a>
+			<hr>
+
+			<a class="uk-button uk-button-danger" href="/?ex=error" class="uk-button uk-button-danger">Alert error</a>
+			<a class="uk-button uk-button-success" href="/?ex=success" class="uk-button uk-button-danger">Alert success</a>
+			<a class="uk-button uk-button-primary" href="/?ex=infos" class="uk-button uk-button-danger">Alert informations</a>	
+
+		</div>

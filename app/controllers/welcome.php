@@ -15,7 +15,6 @@ class Welcome extends \core\controller{
 	 */
 	public function __construct(){
 		parent::__construct();
-
 		$this->language->load('welcome');
 	}
 
@@ -31,7 +30,7 @@ class Welcome extends \core\controller{
 			$alert['success'] = 'Success alert example' ; 
 		} 
 		if($_GET['ex'] == 'infos'){
-			$alert['infos'] = 'Infos alert example' ; 
+			$alert['info'] = 'Infos alert example' ; 
 		}  
 
 		$data['title'] = $this->language->get('welcome_text');

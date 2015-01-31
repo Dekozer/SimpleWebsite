@@ -52,18 +52,38 @@ class Alert extends Controller {
 	 */
 
 	public static function display($alert, $class){
+
 		if (is_array($alert)){
 
 			foreach($alert as $alert){
-				$row.= "<div class='$class'>$alert</div>";
+				$row.= "- ".$alert."<br>";
 			}
-			return $row;
+
+			return "				
+				<script>
+					UIkit.notify({
+					    message : '".$row."',
+					    status  : '".$class."',
+					    timeout : 15000,
+					    pos     : 'top-center'
+					});
+				</script>";
+
 		} else {
 
 			if(isset($alert)){
-				return "<div class='$class'>$alert</div>";
+			return "				
+				<script>
+					UIkit.notify({
+					    message : '".$row."',
+					    status  : '".$class."',
+					    timeout : 15000,
+					    pos     : 'top-center'
+					});
+				</script>";
 			}
-		} 
+
+		}
 	}
 
 }
