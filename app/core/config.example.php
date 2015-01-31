@@ -32,10 +32,10 @@ class Config {
 		define('DB_NAME', 'dbname');
 		define('DB_USER', 'root');
 		define('DB_PASS', 'password');
-		define('PREFIX', 'smvc_');
+		define('PREFIX', 'sws_');
 
 		//set prefix for sessions
-		define('SESSION_PREFIX', 'smvc_');
+		define('SESSION_PREFIX', 'sws_');
 
 		//optionall create a constant for the name of the site
 		define('SITETITLE', 'V2.1');
@@ -51,7 +51,7 @@ class Config {
 		\helpers\session::init();
 
 		//set the default template
-		\helpers\session::set('template', 'default');
+		\helpers\session::set('template', 'sws_default');
 	}
 
 }
