@@ -23,6 +23,7 @@ class Alert extends Controller {
 	 */
 	public function __construct($alert){
 		parent::__construct();
+		$this->language->load('404');
 		$this->_alert = $alert;		
 	}
 
@@ -33,7 +34,8 @@ class Alert extends Controller {
 
 		header("HTTP/1.0 404 Not Found");
 		
-		$data['title'] = '404';
+		$data['title'] = $this->language->get('404_text');
++		$data['message'] = $this->language->get('404_message');	
 		$data['error'] = $this->_alert;
 		
 		View::rendertemplate('header',$data);
