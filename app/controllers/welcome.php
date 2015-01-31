@@ -37,7 +37,8 @@ class Welcome extends \core\controller{
 		$data['welcome_message'] = $this->language->get('welcome_message');
 		
 		View::rendertemplate('header', $data);
-		View::render('welcome/welcome', $data, $alert);
+		View::rendertemplate('navbar', $data, $alert);
+		View::render('welcome/welcome', $data);
 		View::rendertemplate('footer', $data);
 	}
 
@@ -45,11 +46,13 @@ class Welcome extends \core\controller{
 	 * Define Subpage page title and load template files
 	 */
 	public function subpage() {
+
 		$data['title'] = $this->language->get('subpage_text');
 		$data['welcome_message'] = $this->language->get('subpage_message');
 		
 		View::rendertemplate('header', $data);
-		View::render('welcome/subpage', $data, $alert);
+		View::rendertemplate('navbar', $data, $alert);
+		View::render('welcome/subpage', $data);
 		View::rendertemplate('footer', $data);
 	}
 

@@ -19,7 +19,7 @@ class View {
 	 * @param  array $data  array of data
 	 * @param  array $error array of errors
 	 */
-	public static function render($path,$data = false, $alert = false){
+	public static function render($path,$data = false){
 		if (!headers_sent()) {
 			foreach (self::$headers as $header) {
 				header($header, true);
@@ -33,7 +33,7 @@ class View {
 	 * @param  string  $path  path to file from views folder
 	 * @param  array $data  array of data
 	 */
-	public static function rendertemplate($path,$data = false){
+	public static function rendertemplate($path,$data = false, $alert = false){
 		if (!headers_sent()) {
 			foreach (self::$headers as $header) {
 				header($header, true);

@@ -11,4 +11,3 @@
 				<?php echo core\language::show('back_home', 'welcome') ?>
 			</a>
 		</div>
-
